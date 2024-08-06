@@ -46,6 +46,11 @@ class SolanaService {
 				new PublicKey(payer),
 				TOKEN_PROGRAM_ID
 			);
+
+			const recentBlockhash = await connection.getRecentBlockhash();
+			transaction.recentBlockhash = recentBlockhash.blockhash;
+
+			transaction.feePayer = new PublicKey(payer);
 			transaction.add(mintInstruction);
 
 			transaction.partialSign(mintKeypair);
