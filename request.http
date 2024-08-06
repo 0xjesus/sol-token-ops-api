@@ -1,0 +1,64 @@
+### Create Token
+POST http://localhost:1337/solana/create-token
+Content-Type: application/json
+
+{
+  "params": {
+    "payer": "4Nd1mP4F1ZkFb9Ur1Tq69yA4z1A4m2FgYzB7LoN2VZkR",
+    "decimals": 9
+  }
+}
+
+### Mint Token
+POST http://localhost:1337/solana/mint-token
+Content-Type: application/json
+
+{
+  "params": {
+    "payer": "4Nd1mP4F1ZkFb9Ur1Tq69yA4z1A4m2FgYzB7LoN2VZkR",
+    "mintAddress": "6NwQ4mPm1Kj6VgLq1Fq1yUq4k3r6g4r5j8d9pLoN1UvZ",
+    "recipientAddress": "7Tq6mP8Q1Zk9Fb2Uq1Kq2yA4z1A4m3FgXyB7PoN2VYkR",
+    "amount": 1000
+  }
+}
+
+### Transfer Token
+POST http://localhost:1337/solana/transfer-token
+Content-Type: application/json
+
+{
+  "params": {
+    "payer": "4Nd1mP4F1ZkFb9Ur1Tq69yA4z1A4m2FgYzB7LoN2VZkR",
+    "fromAddress": "8Nq2mP9F3Zk3Fb8Tr2Rk3yUq5r4q6n6FgXyB6LoN5WkR",
+    "toAddress": "9Tq5mP1Q7Zk7Fb4Ur1Fq2yKq1A4k3r5FgYzB4PoN1VZk",
+    "mintAddress": "6NwQ4mPm1Kj6VgLq1Fq1yUq4k3r6g4r5j8d9pLoN1UvZ",
+    "amount": 500
+  }
+}
+
+### Burn Token
+POST http://localhost:1337/solana/burn-token
+Content-Type: application/json
+
+{
+  "params": {
+    "payer": "4Nd1mP4F1ZkFb9Ur1Tq69yA4z1A4m2FgYzB7LoN2VZkR",
+    "accountAddress": "8Nq2mP9F3Zk3Fb8Tr2Rk3yUq5r4q6n6FgXyB6LoN5WkR",
+    "mintAddress": "6NwQ4mPm1Kj6VgLq1Fq1yUq4k3r6g4r5j8d9pLoN1UvZ",
+    "amount": 200
+  }
+}
+
+### Delegate Token
+POST http://localhost:1337/solana/delegate-token
+Content-Type: application/json
+
+{
+  "params": {
+    "payer": "4Nd1mP4F1ZkFb9Ur1Tq69yA4z1A4m2FgYzB7LoN2VZkR",
+    "ownerAddress": "8Nq2mP9F3Zk3Fb8Tr2Rk3yUq5r4q6n6FgXyB6LoN5WkR",
+    "delegateAddress": "7Tq6mP8Q1Zk9Fb2Uq1Kq2yA4z1A4m3FgXyB7PoN2VYkR",
+    "mintAddress": "6NwQ4mPm1Kj6VgLq1Fq1yUq4k3r6g4r5j8d9pLoN1UvZ",
+    "amount": 300
+  }
+}

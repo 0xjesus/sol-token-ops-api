@@ -1,5 +1,5 @@
 import primate from '@thewebchimp/primate';
-import { router as defaultRouter } from './routes/default.js';
+import { router as solana } from './routes/solana.js';
 primate.setup();
 await primate.start();
-primate.app.use('/', defaultRouter);
+primate.app.use('/solana', solana);
