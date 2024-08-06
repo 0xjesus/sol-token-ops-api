@@ -2,7 +2,7 @@ import SolanaService from '../services/solana.service.js';
 
 class SolanaController {
 	static async createToken(req,res) {
-		const {payer,decimals} = req.body.params;
+		const {payer,decimals} = req.body
 		if (!payer || !decimals) {
 			return res.respond({
 				status:400,
@@ -24,7 +24,7 @@ class SolanaController {
 	}
 
 	static async mintToken(req,res) {
-		const {payer,mintAddress,recipientAddress,amount} = req.body.params;
+		const {payer,mintAddress,recipientAddress,amount} = req.body;
 		if (!payer || !mintAddress || !recipientAddress || !amount) {
 			return res.respond({
 				status:400,
@@ -47,7 +47,7 @@ class SolanaController {
 	}
 
 	static async transferToken(req,res) {
-		const {payer,fromAddress,toAddress,mintAddress,amount} = req.body.params;
+		const {payer,fromAddress,toAddress,mintAddress,amount} = req.body;
 		if (!payer || !fromAddress || !toAddress || !mintAddress || !amount) {
 			return res.respond({
 				status:400,
@@ -69,7 +69,7 @@ class SolanaController {
 	}
 
 	static async burnToken(req,res) {
-		const {payer,accountAddress,mintAddress,amount} = req.body.params;
+		const {payer,accountAddress,mintAddress,amount} = req.body;
 		if (!payer || !accountAddress || !mintAddress || !amount) {
 			return res.respond({
 				status:400,
@@ -88,7 +88,7 @@ class SolanaController {
 	}
 
 	static async delegateToken(req,res) {
-		const {payer,ownerAddress,delegateAddress,mintAddress,amount} = req.body.params;
+		const {payer,ownerAddress,delegateAddress,mintAddress,amount} = req.body;
 		if (!payer || !ownerAddress || !delegateAddress || !mintAddress || !amount) {
 			return res.respond({
 				status:400,
